@@ -23,7 +23,7 @@ Bandpass filter of noise(6-8kHz) + dropouts, FIR band-stop filter design and IIR
 **Radiation storm - Crackle/hissing noise overlay:** - *Alexander*
 
 The news with a Noise signal overlayed "But when passing the orbit of the Chebychev-moon, you start picking up a broadband noise that makes your signal pretty noisy".  
-Broadband noise genera- tion + spectral shaping, and PSD estimation using Welch’s method or peri- odogram
+Broadband noise genera- tion + spectral shaping, and PSD estimation using Welch’s method or periodogram
 
 **Moon shadow entry - Signal cuts progressively:** *Alexander*
 
