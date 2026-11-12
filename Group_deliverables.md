@@ -11,37 +11,37 @@ Fouirer Transform and envelope ekstraktion. like assignment 1. The image should 
 
 Use syntheziser from assignment 2 to create music "Calm transmission at the beginning (clear synthesizer music, optional: space ship background sounds)" 
 
-**Instrument detection - Brief moment analyzing equipment(with acoustic feedback?):** - Asger Frimor
+**Instrument detection - Brief moment analyzing equipment(with acoustic feedback?):** - *Asger Frimor*
 
 Instrument sound with detection procedure (recorded sound, optional: device sound), like Assignment 2.1 
 
-**Anomaly interference - Narrowband hum at 6–8 kHz:** - Asger Johansen
+**Anomaly interference - Narrowband hum at 6–8 kHz:** - *Asger Johansen*
 
 Bandpass filter of noise(6-8kHz) + dropouts 
 
-**Radiation storm - Crackle/hissing noise overlay:** - Alexander
+**Radiation storm - Crackle/hissing noise overlay:** - *Alexander*
 
 The news with a Noise signal overlayed "But when passing the orbit of the Chebychev-moon, you start picking up a broadband noise that makes your signal pretty noisy".  
 
-**Moon shadow entry - Signal cuts progressively:** Alexander
+**Moon shadow entry - Signal cuts progressively:** *Alexander*
 
 drop-outs while entering the moon shadow. Maybe Chebychev filter with large passband ripples.
 
-**Complete blackout - 2 seconds of silence:** Asger Frimor
+**Complete blackout - 2 seconds of silence:** *Asger Frimor*
 
 **Signal return - Gradual restoration to clarity:** 
 step-wise return to normal. 
 
 We will have recorded sound from us and sound from the radio.
 
-### Table A.2 Mandatory technical components'
+### Table A.2 Mandatory technical components
 Filter types - At least one recursive (IIR) and one non-recursive(FIR) filter implemented
 
-Bilinear transform - Analog-to-digital filter conversion via bilinear transform with documented pre-warping calculations (in code) 
+Bilinear transform - Analog-to-digital filter conversion via bilinear transform with documented pre-warping calculations (in code) - *Asger Johansen*
 
 Power spectral density (PSD) - Estimation using Welch’s method or periodogram with parameter justification
 
-Pole-zero analysis  - z-plane pole-zero plot for at least one recursive filter with stability discussion -
+Pole-zero analysis  - z-plane pole-zero plot for at least one recursive filter with stability discussion - *Asger Johansen*
 
 Spectrogram - Visualization showing signal at relevant scene phases
 
