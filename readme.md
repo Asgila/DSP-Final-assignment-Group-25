@@ -12,3 +12,5 @@ The distribution is as follows:
 Up for grabs: Camera feed (Visualize ship name), step-wise signal return
 
 For more information on what's needed look at ``` Group_deliverables.md```
+
+We aim to be finished with all our individual parts by thursday in week 12 
