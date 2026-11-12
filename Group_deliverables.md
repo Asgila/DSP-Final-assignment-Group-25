@@ -45,7 +45,7 @@ We will have recorded sound from us and sound from the radio.
 **Documentation. We are aiming to write the documentation in week 12**
 
 ### Table A.2 Mandatory technical components
-Filter types - At least one recursive (IIR) and one non-recursive(FIR) filter implemented - Alexander, Asger Johansen
+Filter types - At least one recursive (IIR) and one non-recursive(FIR) filter implemented - Alexander, Asger Johansen, Dmitrii
 
 Bilinear transform - Analog-to-digital filter conversion via bilinear transform with documented pre-warping calculations (in code) - *Asger Johansen*
 
@@ -55,7 +55,7 @@ Pole-zero analysis  - z-plane pole-zero plot for at least one recursive filter w
 
 Spectrogram - Visualization showing signal at relevant scene phases
 
-Sampling frequency - Justification referencing Nyquist criterion for the chosen sampling rate.
+Sampling frequency - Justification referencing Nyquist criterion for the chosen sampling rate. - Dmitrii
 
 Frequency resolution - Discussion linking window length to DFT properties and spectral resolution trade-offs -
 
