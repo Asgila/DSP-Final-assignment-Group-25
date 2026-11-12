@@ -7,7 +7,7 @@ For the final sound, we will piece together snippes of sounds as specified in th
 
 Fouirer Transform and envelope ekstraktion. like assignment 1. The image should be mirroered. "your screen linked to the outside camera shows the mirror image of your space craft" 
 
-**Opening transmission - Clear radio broadcast:**
+**Opening transmission - Clear radio broadcast:** - Dmitrii
 
 Use syntheziser from assignment 2 to create music "Calm transmission at the beginning (clear synthesizer music, optional: space ship background sounds)" 
 
