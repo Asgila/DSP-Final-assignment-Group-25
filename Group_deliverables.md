@@ -35,7 +35,7 @@ step-wise return to normal.
 We will have recorded sound from us and sound from the radio.
 
 ### Table A.2 Mandatory technical components
-Filter types - At least one recursive (IIR) and one non-recursive(FIR) filter implemented *Alexander, Asger Johansen
+Filter types - At least one recursive (IIR) and one non-recursive(FIR) filter implemented - Alexander, Asger Johansen
 
 Bilinear transform - Analog-to-digital filter conversion via bilinear transform with documented pre-warping calculations (in code) - *Asger Johansen*
 
