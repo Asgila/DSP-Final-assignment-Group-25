@@ -41,7 +41,7 @@ Bilinear transform - Analog-to-digital filter conversion via bilinear transform 
 
 Power spectral density (PSD) - Estimation using Welch’s method or periodogram with parameter justification
 
-Pole-zero analysis  - z-plane pole-zero plot for at least one recursive filter with stability discussion - *Asger Johansen*
+Pole-zero analysis  - z-plane pole-zero plot for at least one recursive filter with stability discussion - *Asger Johansen, Alexander*
 
 Spectrogram - Visualization showing signal at relevant scene phases
 
