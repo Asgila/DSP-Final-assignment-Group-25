@@ -40,7 +40,7 @@ Filter types - At least one recursive (IIR) and one non-recursive(FIR) filter im
 
 Bilinear transform - Analog-to-digital filter conversion via bilinear transform with documented pre-warping calculations (in code) - *Asger Johansen*
 
-Power spectral density (PSD) - Estimation using Welch’s method or periodogram with parameter justification
+Power spectral density (PSD) - Estimation using Welch’s method or periodogram with parameter justification - Alexander
 
 Pole-zero analysis  - z-plane pole-zero plot for at least one recursive filter with stability discussion - *Asger Johansen, Alexander*
 
