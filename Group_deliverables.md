@@ -1,20 +1,27 @@
 ### Table A.1: Core requirements
 Scene element - Audio effect - DSP technique required
-Camera feed - Visualized ship name - Fouirer Transform and envelope exstraction. like assignment 1.
+Camera feed - Visualized ship name: 
+Fouirer Transform and envelope ekstraktion. like assignment 1.
 
-Opening transmission - Clear radio broadcast - "Calm transmission at the beginning (clear synthesizer music, optional: space ship background sounds)" 
+Opening transmission - Clear radio broadcast:
+"Calm transmission at the beginning (clear synthesizer music, optional: space ship background sounds)" 
 
-Instrument detection - Brief moment analyzing equipment(with acoustic feedback?) - Instrument sound with detection procedure (recorded sound, optional: device sound), like Assignment 2.1 
+Instrument detection - Brief moment analyzing equipment(with acoustic feedback?):
+Instrument sound with detection procedure (recorded sound, optional: device sound), like Assignment 2.1 
 
-Anomaly interference - Narrowband hum at 6–8 kHz - Bandpass filter of noise(6-8kHz) + dropouts 
+Anomaly interference - Narrowband hum at 6–8 kHz:
+Bandpass filter of noise(6-8kHz) + dropouts 
 
-Radiation storm - Crackle/hissing noise overlay - The news with a Noise signal overlayed "But when passing the orbit of the Chebychev-moon, you start picking up a broadband noise that makes your signal pretty noisy"
+Radiation storm - Crackle/hissing noise overlay:
+The news with a Noise signal overlayed "But when passing the orbit of the Chebychev-moon, you start picking up a broadband noise that makes your signal pretty noisy".  
 
-Moon shadow entry - Signal cuts progressively - drop-outs while entering the moon shadow.
+Moon shadow entry - Signal cuts progressively:
+drop-outs while entering the moon shadow. Maybe Chebychev filter with large passband ripples.
 
 Complete blackout - 2 seconds of silence - 
 
-Signal return - Gradual restoration to clarity - step-wise return to normal
+Signal return - Gradual restoration to clarity - 
+step-wise return to normal. 
 
 We will have recorded sound from us and sound from the radio.
 
