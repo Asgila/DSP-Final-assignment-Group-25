@@ -30,6 +30,7 @@ drop-outs while entering the moon shadow. Maybe Chebychev filter with large pass
 **Complete blackout - 2 seconds of silence:** *Asger Frimor*
 
 **Signal return - Gradual restoration to clarity:** - Dmitrii
+
 step-wise return to normal. 
 
 We will have recorded sound from us and sound from the radio.
