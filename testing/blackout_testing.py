@@ -13,6 +13,56 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import blackout
 
+
+def plot_blackout_effects():
+    import matplotlib.pyplot as plt
+
+    fs = 44100
+    duration = 3.0
+    time = np.linspace(0, duration, int(fs * duration), endpoint=False)
+    original = np.sin(2 * np.pi * 440 * time)
+    quantized = blackout.simulate_quantization_reduction(original, target_bit_depth=4)
+    blackout_start = 0.5
+    blackout_signal, reconstructed = blackout.apply_complete_blackout_phase(
+        original, fs, blackout_start
+    )
+    blackout_end = blackout_start + 2.0
+
+    figure, (quantization_axis, blackout_axis) = plt.subplots(2, 1, figsize=(11, 7))
+    sample_window = time <= 0.03
+    quantization_axis.plot(time[sample_window], original[sample_window], label="Original")
+    quantization_axis.step(
+        time[sample_window],
+        quantized[sample_window],
+        where="mid",
+        label="4-bit quantized",
+        alpha=0.8,
+    )
+    quantization_axis.set(
+        title="Effect of 4-bit quantization",
+        xlabel="Time (s)",
+        ylabel="Amplitude",
+    )
+    quantization_axis.legend()
+    quantization_axis.grid(True, alpha=0.3)
+
+    blackout_axis.plot(time, original, label="Original", alpha=0.45)
+    blackout_axis.plot(time, blackout_signal, label="Blackout signal")
+    blackout_axis.plot(time, reconstructed, label="Reconstructed", linewidth=1.2)
+    blackout_axis.axvspan(blackout_start, blackout_end, color="red", alpha=0.12, label="Dropout")
+    blackout_axis.set_xlim(blackout_start - 0.1, blackout_end + 0.1)
+    blackout_axis.set(
+        title="Effect of dropout and spline reconstruction",
+        xlabel="Time (s)",
+        ylabel="Amplitude",
+    )
+    blackout_axis.legend()
+    blackout_axis.grid(True, alpha=0.3)
+
+    figure.tight_layout()
+    plt.show()
+
+
 class TestBlackoutModule(unittest.TestCase):
     def setUp(self):
         """Set up a basic 440Hz sine wave for testing."""
@@ -91,4 +141,8 @@ class TestBlackoutModule(unittest.TestCase):
         self.assertFalse(np.all(reconstructed_sig[start_idx:end_idx] == 0.0))
 
 if __name__ == '__main__':
-    unittest.main()
+    show_plot = '--plot' in sys.argv
+    result = unittest.main(argv=[sys.argv[0]], exit=False)
+    if show_plot:
+        plot_blackout_effects()
+    sys.exit(not result.result.wasSuccessful())
