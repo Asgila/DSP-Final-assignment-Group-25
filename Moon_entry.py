@@ -35,7 +35,7 @@ ramp_s = 0.005
 def chebychev_filter(cutoff, ripple_db, order, fs):
     #same algorithm as Bandbass filter
 
-    b_analog, a_analog = signal.iirfilter(order,wn = 1.0, rp = ripple_db,analog =True, ftype = 'cheby1',btype ='low')
+    b_analog, a_analog = signal.iirfilter(order, Wn=1.0, rp=ripple_db, analog=True, ftype='cheby1', btype='low')
 
     #prewarp the digital cutoff
     wc = prewarp_frequency(cutoff, fs)
@@ -60,10 +60,10 @@ def masking(N,fs,dropouts): #makes dropout with gain at certain points
     mask = np.ones(N)
     T_total = N / fs
     ramp = int(ramp_s * fs)
-    st = T_total * np.sqrt((np.arrage(dropouts) + 0.5)/dropouts) #sqrt gives more droputs as density scales linearly with time
+    st = T_total * np.sqrt((np.arange(dropouts) + 0.5)/dropouts) #sqrt gives more droputs as density scales linearly with time
     for t in st:
         progress = t/T_total
-        duration = int(dropout_duration + drop_progress * progress**2 * fs) #dropots get longer
+        duration = int((dropout_duration + drop_progress * progress**2) * fs) #dropots get longer
         start = int(t * fs)
         stop = min(start + duration,N)
         area = dropout(duration,ramp)[:stop -start]
@@ -73,13 +73,13 @@ def masking(N,fs,dropouts): #makes dropout with gain at certain points
 def moon_shadow(x,fs,dropouts = 16, T = None, bits = bits):
     x = np.asarray(x, dtype=float)
     N = x.shape[0]
-    T = N / fs
+    T = N / fs if T is None else T
     b, a = chebychev_filter(cutoff * fs, ripple_db, order, fs)
     if not is_stable(a):
         raise RuntimeError("Chebyshev filter is unstable")
     filtered = signal.filtfilt(b, a, x, axis=0)
 
-    degraded = filtered if bits is None else simulate_quantization_reduction(filtered, bits)
+    degraded = filtered if bits is None else simulate_quantization_reduction(filtered, target_bit_depth=bits)
 
     #fade
     t = np.arange(N) /fs #time vector
