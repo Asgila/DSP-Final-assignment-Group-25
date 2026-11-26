@@ -62,8 +62,8 @@ def masking(N,fs,dropouts): #makes dropout with gain at certain points
     ramp = int(ramp_s * fs)
     st = T_total * np.sqrt((np.arrage(dropouts) + 0.5)/dropouts) #sqrt gives more droputs as density scales linearly with time
     for t in st:
-        progress = time/T_total
-        duration = int(min_drop + drop_gain * progress**2 * fs) #dropots get longer
+        progress = t/T_total
+        duration = int(dropout_duration + drop_progress * progress**2 * fs) #dropots get longer
         start = int(t * fs)
         stop = min(start + duration,N)
         area = dropout(duration,ramp)[:stop -start]
