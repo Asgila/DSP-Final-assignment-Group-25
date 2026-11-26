@@ -87,13 +87,13 @@ def calculate_snr(original_signal, degraded_signal):
 
 
 # This function applies a complete blackout phase to the signal, simulating a dropout and attempting to reconstruct it.
-def apply_complete_blackout_phase(signal, fs, blachout_start_time):
+def apply_complete_blackout_phase(signal, fs, blackout_start_time):
     
     # simulate reduced quantization before the dropout
     degraded_signal = simulate_quantization_reduction(signal, target_bit_depth=4)
 
     # simulate the 2 second dropout (total signal loss)
-    start_idx=int(blachout_start_time * fs)
+    start_idx=int(blackout_start_time * fs)
     end_idx=start_idx + int(2.0 * fs)
     blackout_signal = np.copy(degraded_signal)
     blackout_signal[start_idx:end_idx] = 0.0
@@ -102,7 +102,7 @@ def apply_complete_blackout_phase(signal, fs, blachout_start_time):
     reconstructed_signal = interpolate_dropout(
         blackout_signal, 
         fs, 
-        start_time=blachout_start_time, 
+        start_time=blackout_start_time, 
         duration=2.0, 
         method='spline'
     )
